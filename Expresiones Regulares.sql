@@ -13,7 +13,7 @@ SELECT * FROM empleados
 where apellido regexp "ez";
 
 SELECT * FROM empleados
-	#Que impieza
+	#Que empieza
 where apellido regexp "^A";
 
 SELECT * FROM empleados
