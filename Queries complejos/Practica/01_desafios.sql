@@ -71,7 +71,10 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
-
+SELECT
+	company
+FROM customers
+WHERE id IN (SELECT DISTINCT customer_id FROM orders);
 
 -- ▲▲▲ FIN ▲▲▲
 
@@ -92,12 +95,28 @@ WHERE list_price > (
 
 -- ▼▼▼ 3A — ESCRIBÍ TU CONSULTA CON JOIN ▼▼▼
 
+SELECT 
+	c.company,
+	COUNT(o.id) AS total_ordenes
+FROM customers c
+JOIN orders o
+ON c.id = o.customer_id
+GROUP BY c.company;
 
 -- ▲▲▲ FIN 3A ▲▲▲
 
 
 -- ▼▼▼ 3B — ESCRIBÍ TU CONSULTA CON SUBCONSULTA EN FROM ▼▼▼
 
+SELECT 
+	c.company, 
+	t.total_ordenes
+FROM customers c
+JOIN (
+    SELECT customer_id, COUNT(*) AS total_ordenes
+    FROM orders
+    GROUP BY customer_id
+) AS t ON t.customer_id = c.id;
 
 -- ▲▲▲ FIN 3B ▲▲▲
 
@@ -116,6 +135,15 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
+SELECT 
+	p.product_name,
+	p.list_price,
+	p.supplier_ids
+FROM products p
+WHERE p.list_price > ALL(
+	SELECT p2.list_price  
+	FROM products p2
+	WHERE p2.supplier_ids = p.supplier_ids AND p2.id <> p.id);
 
 -- ▲▲▲ FIN ▲▲▲
 
@@ -135,6 +163,16 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
+SELECT 
+	o.id, 
+	o.ship_city, 
+	o.ship_state_province, 
+	o.shipping_fee
+FROM orders o
+WHERE shipping_fee > ANY(
+	SELECT o2.shipping_fee
+	FROM orders o2
+	WHERE o2.ship_state_province = "NY");
 
 -- ▲▲▲ FIN ▲▲▲
 
@@ -153,6 +191,12 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
+	SELECT *
+	FROM orders o
+	WHERE shipping_fee >(
+		SELECT AVG(o2.shipping_fee)
+		FROM orders o2
+		WHERE o2.customer_id = o.customer_id);
 
 -- ▲▲▲ FIN ▲▲▲
 
@@ -171,6 +215,14 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
+SELECT 
+	p.id,
+	p.product_name
+FROM products p
+WHERE NOT EXISTS(
+	SELECT 1
+	FROM order_details o
+	WHERE o.product_id = p.id);
 
 -- ▲▲▲ FIN ▲▲▲
 
@@ -189,6 +241,11 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
+SELECT 
+	company,
+	(SELECT COUNT(customer_id) FROM orders o WHERE o.customer_id = c.id) AS total_ordenes,
+	(SELECT SUM(o.shipping_fee) FROM orders o WHERE o.customer_id = c.id) AS total_envio
+FROM customers c;
 
 -- ▲▲▲ FIN ▲▲▲
 
@@ -207,6 +264,21 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
+SELECT 
+	product_name, v.total_unidades _unidades
+FROM (
+	SELECT SUM(quantity) AS total_unidades, product_id
+	FROM order_details 
+	GROUP BY product_id) AS v
+JOIN products p
+ON p.id = v.product_id
+WHERE v.total_unidades >(
+	SELECT AVG(t.total_unidades)
+	FROM (
+        SELECT SUM(quantity) AS total_unidades
+        FROM order_details
+        GROUP BY product_id
+    ) AS t);
 
 -- ▲▲▲ FIN ▲▲▲
 
@@ -225,7 +297,15 @@ WHERE list_price > (
 
 -- ▼▼▼ ESCRIBÍ TU CONSULTA AQUÍ ▼▼▼
 
-
+SELECT 	
+	company, s.state_province
+FROM suppliers s
+WHERE EXISTS(
+	SELECT 1
+	FROM products p
+	JOIN order_details o ON o.product_id = p.id
+	WHERE o.quantity >= 50 AND p.supplier_ids = s.id);
+	
 -- ▲▲▲ FIN ▲▲▲
 
 
