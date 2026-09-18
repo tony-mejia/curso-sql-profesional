@@ -1,0 +1,3 @@
+# Los scripts deben quedar siempre en LF: un CRLF rompe el shebang y bash.
+# core.autocrlf=true los convertiría a CRLF al hacer checkout.
+*.sh text eol=lf
