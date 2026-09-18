@@ -1,15 +1,23 @@
-Recursos/Manual - Ejercicios SQL Cero a Experto.pdf
-Recursos/Respuestas_Ejercicios.zip
-Recursos/Respuestas_Ejercicios/Cap10-Eventos-Trigger/cap10Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap14-Indexing/cap14Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap2-Trabar-con-una-tabla/cap2Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap3-Trabajar-con-varias-tablas/cap3Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap4-Trabajar-con-datos/cap4Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap5-Resumir-datos/cap5Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap6-Queries-complejos/cap6Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap7-Funciones-Escenciales-de-SQL/cap7Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap8-Vistas/cap8Ejercicios.sql
-Recursos/Respuestas_Ejercicios/Cap9-Procesos-Almacenado/cap9Ejercicios.sql
+# ============================================================================
+# Curso SQL — .gitignore
+# ============================================================================
+
+# --- Engram (memoria persistente) -------------------------------------------
+# Configuración local del tool, no contenido del repo. Se deja sin versionar
+# a propósito: el pin del nombre solo afecta al Engram de esta máquina.
+.engram/
+
+# --- gentle-pi --------------------------------------------------------------
+# Registro de skills auto-generado (se reconstruye con /skill-registry:refresh).
 .atl/
+
+# --- Material descargado del curso (no se versiona) -------------------------
+# Las respuestas se ignoran por carpeta, no archivo por archivo: así no hay
+# que agregar un renglón cada vez que el curso publica un capítulo nuevo.
+Recursos/Manual - Ejercicios SQL Cero a Experto.pdf
+Recursos/Respuestas_Ejercicios/
+Recursos/Respuestas_Ejercicios.zip
 Recursos/NorthwindDB/
 Recursos/NorthwindDB.zip
+
+# NOTA: .pi/skills/ NO se ignora. La skill del apunte es parte del repo.
