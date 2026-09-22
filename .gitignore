@@ -20,4 +20,9 @@ Recursos/Respuestas_Ejercicios.zip
 Recursos/NorthwindDB/
 Recursos/NorthwindDB.zip
 
+# --- ODD (planificación del harness) ---------------------------------------
+# Estado de trabajo del agente (los task docs de ODD): bookkeeping local, no
+# contenido del apunte. Mismo criterio que .engram/ y .atl/.
+odd/
+
 # NOTA: .pi/skills/ NO se ignora. La skill del apunte es parte del repo.
