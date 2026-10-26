@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-labelledby="leafTitle leafDesc">
+  <title id="leafTitle">Sprout mark</title>
+  <desc id="leafDesc">A small sprout used as a section divider: one vertical stem with a leaf on each side.</desc>
+  <g>
+    <path d="M24 43V15" fill="none" stroke="#959581" stroke-width="2" stroke-linecap="round" />
+    <path d="M24 28C14.8 28 9 22.2 9 13 18.2 13 24 18.8 24 28Z" fill="#768064" />
+    <path d="M24 22C33.2 22 39 16.2 39 7 29.8 7 24 12.8 24 22Z" fill="#768064" />
+  </g>
+</svg>

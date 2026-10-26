@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 660" role="img"
+     aria-labelledby="moldeTitulo moldeDesc"
+     font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif">
+  <title id="moldeTitulo">Anatomía de un apunte: encabezado de 79 columnas, cuerpo intacto y cierre</title>
+  <desc id="moldeDesc">Tres bloques apilados. Arriba, una regla mide el separador: tres columnas de prefijo más 76 signos igual, 79 columnas exactas. El bloque 1 es el encabezado entre barra y asterisco, con TEMA y Objetivo, que agrega la skill. El bloque 2 es el cuerpo con las líneas propias del alumno, typos incluidos, que nadie toca. El bloque 3 es el cierre, cuyo título se adapta al tema.</desc>
+
+  <rect width="1240" height="660" fill="#2C3424" />
+
+  <!-- the 79-column rule -->
+  <text x="64" y="40" font-size="13" font-weight="600" fill="#DADED8" letter-spacing="2">EL SEPARADOR MIDE 79 COLUMNAS</text>
+  <rect x="64" y="56" width="24" height="24" rx="3" fill="#959581" fill-opacity="0.25" stroke="#959581" stroke-opacity="0.7" />
+  <rect x="92" y="56" width="608" height="24" rx="3" fill="#768064" fill-opacity="0.22" stroke="#768064" />
+  <text x="716" y="73" font-size="13" fill="#DADED8">3 columnas de prefijo + 76 signos = 79</text>
+  <text x="64" y="106" font-size="12" fill="#959581">El verificador de la skill cuenta esos 79 en cada separador del archivo.</text>
+
+  <!-- 1. header -->
+  <rect x="64" y="132" width="1112" height="170" rx="10" fill="#DADED8" fill-opacity="0.04" stroke="#959581" stroke-opacity="0.28" />
+  <rect x="80" y="120" width="196" height="24" rx="4" fill="#4C583E" />
+  <text x="92" y="137" font-size="12" font-weight="600" fill="#DADED8" letter-spacing="1">1 · ENCABEZADO</text>
+  <text x="1156" y="137" font-size="12" fill="#DADED8" text-anchor="end">lo agrega la skill</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace" font-size="13">
+    <text x="88" y="176" fill="#768064">/* ============================================================================</text>
+    <text x="88" y="202" fill="#DADED8">   TEMA: Transacciones y Propiedades ACID</text>
+    <text x="88" y="228" fill="#768064">   ============================================================================</text>
+    <text x="88" y="254" fill="#DADED8">   Objetivo: la unidad de trabajo indivisible</text>
+    <text x="88" y="280" fill="#768064">============================================================================ */</text>
+  </g>
+
+  <!-- 2. body -->
+  <rect x="64" y="322" width="1112" height="144" rx="10" fill="#DADED8" fill-opacity="0.04" stroke="#959581" stroke-opacity="0.28" />
+  <rect x="80" y="310" width="240" height="24" rx="4" fill="#4C583E" />
+  <text x="92" y="327" font-size="12" font-weight="600" fill="#DADED8" letter-spacing="1">2 · CUERPO INTACTO</text>
+  <text x="1156" y="327" font-size="12" fill="#DADED8" text-anchor="end">las líneas propias no se tocan, ni los typos</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace" font-size="13">
+    <text x="88" y="366" fill="#768064">-- ============================================================================</text>
+    <text x="88" y="392" fill="#DADED8">-- 1. TÍTULO</text>
+    <text x="88" y="418" fill="#959581"># Base de datos relacional sognifica que vas a guardar datos</text>
+    <text x="88" y="444" fill="#959581"># en varias tablas y puedes conectarlas</text>
+  </g>
+
+  <!-- 3. closing block -->
+  <rect x="64" y="486" width="1112" height="144" rx="10" fill="#DADED8" fill-opacity="0.04" stroke="#959581" stroke-opacity="0.28" />
+  <rect x="80" y="474" width="160" height="24" rx="4" fill="#4C583E" />
+  <text x="92" y="491" font-size="12" font-weight="600" fill="#DADED8" letter-spacing="1">3 · CIERRE</text>
+  <text x="1156" y="491" font-size="12" fill="#DADED8" text-anchor="end">el título se adapta al tema, nunca se copia</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace" font-size="13">
+    <text x="88" y="530" fill="#768064">-- ============================================================================</text>
+    <text x="88" y="556" fill="#DADED8">-- TIPS PRO &amp; TRUCOS DE PRODUCCIÓN</text>
+    <text x="88" y="582" fill="#768064">-- ============================================================================</text>
+  </g>
+</svg>
